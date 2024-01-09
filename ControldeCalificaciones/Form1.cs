@@ -16,5 +16,10 @@ namespace ControldeCalificaciones
         {
             InitializeComponent();
         }
+
+        private void txtAlumno_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

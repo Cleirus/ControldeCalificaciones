@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.txtAlumno = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,7 +50,9 @@
             this.lblPromedio = new System.Windows.Forms.Label();
             this.lblCondicion = new System.Windows.Forms.Label();
             this.lblCalfBaja = new System.Windows.Forms.Label();
+            this.epError = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epError)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -87,6 +90,7 @@
             this.btmCalcular.TabIndex = 3;
             this.btmCalcular.Text = "Calcular";
             this.btmCalcular.UseVisualStyleBackColor = true;
+            this.btmCalcular.Click += new System.EventHandler(this.btmCalcular_Click);
             // 
             // btmLimpiar
             // 
@@ -241,6 +245,10 @@
             this.lblCalfBaja.TabIndex = 12;
             this.lblCalfBaja.Text = "Calificacion Baja";
             // 
+            // epError
+            // 
+            this.epError.ContainerControl = this;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -261,8 +269,10 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Control de Calificaciones";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,6 +301,7 @@
         private System.Windows.Forms.Label lblPromedio;
         private System.Windows.Forms.Label lblCondicion;
         private System.Windows.Forms.Label lblCalfBaja;
+        private System.Windows.Forms.ErrorProvider epError;
     }
 }
 

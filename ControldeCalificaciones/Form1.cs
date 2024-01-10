@@ -24,13 +24,26 @@ namespace ControldeCalificaciones
             LimpiarControles();
         }
 
-        private void txtAlumno_TextChanged(object sender, EventArgs e)
-        {
+        private void txtAlumno_TextChanged(object sender, EventArgs e){ }
 
+        private void btmLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarControles();
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult r = MessageBox.Show("Salir", "Deseas salir?", 
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (r == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
         private void btmCalcular_Click(object sender, EventArgs e)
         {
             #region Validar controles
+                      
+
             //Validar campo Alumnos
             if (txtAlumno.Text == String.Empty)
             {
@@ -135,6 +148,20 @@ namespace ControldeCalificaciones
                 epError.Clear();
             }
             #endregion
+
+            //Calcular promedio
+            Promedio objP = new Promedio();
+
+            objP.Nota1 = calf1;
+            objP.Nota2 = calf2;
+            objP.Nota3 = calf3;
+            objP.Nota4 = calf4;
+
+            lblPromedio.Text = objP.CalularPromedio().ToString("0.00");
+            lblCalfBaja.Text = objP.CalculaNotaBaja().ToString("0.00");
+            lblCondicion.Text = objP.Condicion();
+
+
         }
         private void LimpiarControles() 
         { 

@@ -100,6 +100,7 @@
             this.btmLimpiar.TabIndex = 4;
             this.btmLimpiar.Text = "Limpiar";
             this.btmLimpiar.UseVisualStyleBackColor = true;
+            this.btmLimpiar.Click += new System.EventHandler(this.btmLimpiar_Click);
             // 
             // label3
             // 
@@ -217,6 +218,7 @@
             this.button1.TabIndex = 9;
             this.button1.Text = "Salir";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblPromedio
             // 
@@ -232,9 +234,9 @@
             this.lblCondicion.AutoSize = true;
             this.lblCondicion.Location = new System.Drawing.Point(160, 210);
             this.lblCondicion.Name = "lblCondicion";
-            this.lblCondicion.Size = new System.Drawing.Size(54, 13);
+            this.lblCondicion.Size = new System.Drawing.Size(59, 13);
             this.lblCondicion.TabIndex = 11;
-            this.lblCondicion.Text = "Condicion";
+            this.lblCondicion.Text = "Sin estatus";
             // 
             // lblCalfBaja
             // 
